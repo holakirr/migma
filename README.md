@@ -205,11 +205,11 @@ export default config;
 
 @layer utilities {
   .no-ring {
-    @apply outline-none ring-0 ring-offset-0 focus:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0 !important;
+    @apply outline-hidden ring-0 ring-offset-0 focus:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0 !important;
   }
 
   .input-ring {
-    @apply h-8 rounded-none border-none  bg-transparent outline-none ring-offset-0 focus:ring-1  focus:ring-primary-green focus:ring-offset-0 focus-visible:ring-offset-0 !important;
+    @apply h-8 rounded-none border-none  bg-transparent outline-hidden ring-offset-0 focus:ring-1  focus:ring-primary-green focus:ring-offset-0 focus-visible:ring-offset-0 !important;
   }
 
   .right-menu-content {
@@ -491,7 +491,7 @@ type Props = {
 const PinnedComposer = ({ onComposerSubmit, ...props }: Props) => {
   return (
     <div className="absolute flex gap-4" {...props}>
-      <div className="select-none relative w-9 h-9 shadow rounded-tl-md rounded-tr-full rounded-br-full rounded-bl-full bg-white flex justify-center items-center">
+      <div className="select-none relative w-9 h-9 shadow-sm rounded-tl-md rounded-tr-full rounded-br-full rounded-bl-full bg-white flex justify-center items-center">
         <Image
           src={`https://liveblocks.io/avatars/avatar-${Math.floor(Math.random() * 30)}.png`}
           alt="someone"
@@ -771,7 +771,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
         }}
       >
         <div
-          className='relative flex h-9 w-9 select-none items-center justify-center rounded-bl-full rounded-br-full rounded-tl-md rounded-tr-full bg-white shadow'
+          className='relative flex h-9 w-9 select-none items-center justify-center rounded-bl-full rounded-br-full rounded-tl-md rounded-tr-full bg-white shadow-sm'
           data-draggable={true}
         >
           <Image
@@ -784,7 +784,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
           />
         </div>
         {!minimized ? (
-          <div className='flex min-w-60 flex-col overflow-hidden rounded-lg bg-white text-sm shadow'>
+          <div className='flex min-w-60 flex-col overflow-hidden rounded-lg bg-white text-sm shadow-sm'>
             <Thread
               thread={thread}
               indentCommentContent={false}

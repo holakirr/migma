@@ -49,7 +49,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
         }}
       >
         <div
-          className='relative flex h-9 w-9 select-none items-center justify-center rounded-bl-full rounded-br-full rounded-tl-md rounded-tr-full bg-white shadow'
+          className='relative flex h-9 w-9 select-none items-center justify-center rounded-bl-full rounded-br-full rounded-tl-md rounded-tr-full bg-white shadow-sm'
           data-draggable={true}
         >
           <Image
@@ -62,7 +62,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
           />
         </div>
         {!minimized ? (
-          <div className='flex min-w-60 flex-col overflow-hidden rounded-lg bg-white text-sm shadow'>
+          <div className='flex min-w-60 flex-col overflow-hidden rounded-lg bg-white text-sm shadow-sm'>
             <Thread
               thread={thread}
               indentCommentContent={false}
